@@ -1,6 +1,6 @@
-# Welcome to the simplified version of a popular card game - War!
+# Welcome to the simplified version of the popular card game - War!
 
-Yes, I made this extremely simple game even simpler! Now Your only task is just to press Enter and watch results! Forget about tedious shuffling, dealing and exchanging cards!
+Yes, I made this extremely simple game even simpler! Now Your only task is just to press the Enter and watch results! Forget about tedious shuffling, dealing and exchanging cards!
 
 The game is designed for two person but it doesn't matter, if you don't have another human player. Due to the simplicity of the production, the game will be looking exactly the same, it doesn't matter who you're playing against!
 
