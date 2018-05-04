@@ -26,10 +26,10 @@ class W_Hand(cards.Hand):
         self.score = score
 
     def __str__(self):
-        # wyswietla liczbe punktow gracza
+        # display a number of a player's points
         rep = self.name + "[" + str(self.score) + "]" + ": "
         rep += super(W_Hand, self).__str__()
-        #wyswietla wartosc karty
+        # display card value
         if self.total:
             rep += "(" + str(self.total) + ")"
 
@@ -41,7 +41,7 @@ class W_Hand(cards.Hand):
             if not card.value:
                 return None
         t = 0
-        # tworzy wartość karty
+        # create card value
         for card in self.cards:
             if card.value == 1:
                 t+= W_Card.ACE_VALUE
@@ -50,7 +50,7 @@ class W_Hand(cards.Hand):
 
         return t
 
-    # zwieksza liczbe punktow gracza o jeden
+    # increment number of player's points
     def add_point(self, point):
         self.score += point
 
@@ -77,52 +77,52 @@ class W_Game(object):
         self.deck.populate()
         self.deck.shuffle()
 
-        while len(self.deck.cards) != 0: # gra dopoki sa karty w talii
+        while len(self.deck.cards) != 0: # loop until there're cards in the deck
 
-            # rozdaje po jednej karcie kazdemu z graczy i wyswietla
+            # pass to every player one card and display them
             self.deck.deal(self.players, per_hand=1)
             for player in self.players:
                 print(player)
 
-            # sprawdza kto ma wyzsza karte i dodaje punkty zwyciezcy
+            # check who has higher card and gives the winner points
             if self.players[0].total > self.players[1].total:
                 self.players[0].add_point(1)
             elif self.players[0].total < self.players[1].total:
                 self.players[1].add_point(1)
             else:
-                # w wypadku remisu wybucha wojna
+                # im case of draw there is a war outbreak
                 print("\nWAR OUTBREAK!!!\n")
-                # każdy gracz dostaje kolejna karte, ktora jest odwrocona
+                # every player gets additional card which is flipped
                 self.deck.deal(self.players, per_hand=1)
                 for player in self.players:
                     player.cards[1].flip()
                     print(player)
-                # oraz trzecia karte, ktora jest juz wyswietlona normalnie
+                # and then a third card which is displayed normally
                 self.deck.deal(self.players, per_hand=1)
                 for player in self.players:
                     print(player)
-                # usuwa dwie pierwsze karty w celu porownania jedynie ostatnich dobranych kart
+                # remove two initial cards in order to compare only the latest
                     del player.cards[:2]
-                # wyswietla ostatnie dobrane karty
+                # display freshly taken cards
                 for player in self.players:
                     print(player)
 
-                # sprawdza kto ma wyzsza karte i dodaje punkty zwyciezcy
+                # check who has higher card and gives the winner points
                 if self.players[0].total > self.players[1].total:
                     self.players[0].add_point(3)
                 elif self.players[0].total < self.players[1].total:
                     self.players[1].add_point(3)
 
-            # gracz ktory wygral zabiera karty i odklada na osobny stos
+            # a winner takes cards and put them away to a seperated stack
             for player in self.players:
                 player.clear()
 
-            # koniec tury
+            # end of a turn
             input("Continue... [Enter]\n")
 
             os.system('cls' if os.name == 'nt' else 'clear')
 
-# po wyczerpaniu sie kart w talii sprawdza kto ma wyzszy wynik i oglasza zwyciezce i przegranego albo remis
+# when the deck is empty, check who has higher score and declare the winner and the looser of the game or draw
         if self.players[0].score > self.players[1].score:
             self.players[0].win()
             self.players[1].lose()
@@ -133,7 +133,7 @@ class W_Game(object):
             for player in self.players:
                 player.push()
 
-        # usuwa wszystkie karty
+        # delete all cards
         for player in self.players:
             player.clear()
             player.score = 0
