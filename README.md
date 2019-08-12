@@ -4,7 +4,7 @@ Yes, I made this extremely simple game even simpler! Now Your only task is just 
 
 The game is designed for two person but it doesn't matter, if you don't have another human player. Due to the simplicity of the production, the game will be looking exactly the same, it doesn't matter who you're playing against!
 
-**To run online**
+**To run online:**
 
 Just click in the link:
 
