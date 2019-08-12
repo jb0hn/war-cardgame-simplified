@@ -4,6 +4,13 @@ Yes, I made this extremely simple game even simpler! Now Your only task is just 
 
 The game is designed for two person but it doesn't matter, if you don't have another human player. Due to the simplicity of the production, the game will be looking exactly the same, it doesn't matter who you're playing against!
 
+** To run online **
+
+Just click in the link https://repl.it/@jb0hn/war-cardgame-simplified and after redirect to the Repl.it website, make sure that "main.py" file is open and then click green button "Run" in the top bar of the page. 
+
+
+
+
 **To run on GNU/Linux, open the Terminal and paste:**
 
     cd /path/to/the/game/folder
@@ -18,7 +25,7 @@ The game is designed for two person but it doesn't matter, if you don't have ano
     python game.py
 
 
-The game was tested on GNU/Linux (Ubuntu 16.04.2 with Python 3.5.2) and Windows (Windows 10 with Python 3.6.4).
+The game was tested on GNU/Linux (Ubuntu 16.04.2 with Python 3.5.2), Windows (Windows 10 with Python 3.6.4) and Repl.it (August 2019).
 
 
 ## Instruction
